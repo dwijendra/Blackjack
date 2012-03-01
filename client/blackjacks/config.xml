@@ -1,0 +1,768 @@
+<!--
+
+	SmartFoxServer PRO 
+	(c) 2004-2007 gotoAndPlay()
+	www.gotoandplay.it
+	www.smartfoxserver.com
+	
+	Main Configuration file
+	version 1.6.0
+	
+	NOTE:
+	You can find detailed informations on how to configure the server by reading
+	the tutorials in section 2 of the documentation.
+	( http://www.smartfoxserver.com/docs/docPages/config/basics.htm )
+	
+-->
+
+<SmartFoxConfig>
+	
+	<ServerSetup>
+		
+		<!-- Server IP and port number -->
+		<ServerIP>0.0.0.0</ServerIP>
+		<ServerPort>9339</ServerPort>
+		
+		<AutoSendPolicyFile>true</AutoSendPolicyFile>
+		<MaxUserIdleTime>9300</MaxUserIdleTime>
+		<MaxSocketIdleTime>4000</MaxSocketIdleTime>
+		<!-- Server Variables limits (-1 = unlimited) -->
+		<MaxRoomVars>-1</MaxRoomVars>
+		<MaxUserVars>-1</MaxUserVars>
+		
+		<!-- Antiflood filter -->
+		<AntiFlood active="true">
+			<MinMsgTime tolerance="5">2000</MinMsgTime>
+			<MaxRepeatedMessages>3</MaxRepeatedMessages>
+			<WarningsBeforeKick>2</WarningsBeforeKick>
+			<WarningMessage><![CDATA[No flooding allowed!)]]></WarningMessage>
+			<KickMessage><![CDATA[You've been warned! No flooding! Now you're kicked]]></KickMessage>
+			<BanMessage><![CDATA[Stop Flooding!! You're being banned]]></BanMessage>			
+			<BanAfter timeSpan="1">3</BanAfter>
+		</AntiFlood>
+		
+		<!-- Bad words filter -->
+		<BadWordsFilter active="true">
+			<FilterMode>filter</FilterMode> <!-- REMOVE or FILTER -->
+			<StripCharacters><![CDATA[,.;:_!$%&/#*-+]]></StripCharacters>
+			<Warnings>true</Warnings>
+			<FilterRoomNames>true</FilterRoomNames>
+			<FilterUserNames>true</FilterUserNames>
+			<WarningsBeforeKick>3</WarningsBeforeKick>
+			<WarningMessage><![CDATA[No swearing!)]]></WarningMessage>
+			<KickMessage><![CDATA[You've been warned! No Swearing! Now you're kicked]]></KickMessage>
+			<BanMessage><![CDATA[Stop Swearing! You're being banned!]]></BanMessage>	
+			<BanAfter timeSpan="1">3</BanAfter>
+			
+					<!-- Banned Dutch Words in the future we must ad this to a list becouse we have more langs. -->
+
+			<BadWordsList>
+			    <badWord>motherfucker</badWord>
+                <badWord>round</badWord>
+                <badWord>www.bingo</badWord>
+                <badWord>snel.nl</badWord>
+                <badWord>bingosnel</badWord>
+			    <badWord>dickhead</badWord>
+				<badWord>asshole</badWord>
+				<badWord>shithead</badWord>
+				<badWord>shit</badWord>
+				<badWord>fucking</badWord>
+				<badWord>fuck</badWord>
+				<badWord>dickhead</badWord>
+				<badWord>bastard</badWord>
+				<badWord>nigger</badWord>
+				<badWord>idiot</badWord>
+				<badWord>bitch</badWord>
+				<badWord>kut</badWord>				
+				<badWord>lul</badWord>
+				<badWord>nlbingo</badWord>
+				<badWord>kanker</badWord>
+				<badWord>tiefus</badWord>
+				<badWord>bingolot</badWord>
+				<badWord>bingo-lot</badWord>
+				<badWord>cashbingo</badWord>
+				<badWord>moslim</badWord>
+				<badWord>turk</badWord>
+				<badWord>neger</badWord>
+				<badWord>negerin</badWord>
+				<badWord>kanker</badWord>
+				<badWord>kankerlijer</badWord>
+				<badWord>tering</badWord>
+				<badWord>teringlijer</badWord>
+				<badWord>roetmop</badWord>
+				<badWord>beabingo</badWord>
+				<badWord>jogobingo</badWord>
+				<badWord>nlbingo</badWord>
+				<badWord>mariabingo</badWord>
+				<badWord>bingoday</badWord>
+				<badWord>bingolot</badWord>
+				<badWord>unibet</badWord>
+				<badWord>kutbingo</badWord>
+				<badWord>kut</badWord>
+				<badWord>kutje</badWord>
+				<badWord>lul</badWord>
+				<badWord>neuken</badWord>
+				<badWord>pijpen</badWord>
+				<badWord>sperma</badWord>
+				<badWord>hoer</badWord>
+				<badWord>hoertje</badWord>
+				<badWord>pik</badWord>
+				<badWord>pikkie</badWord>
+				<badWord>zeiken</badWord>
+				<badWord>kutspel</badWord>
+				<badWord>kankerspel</badWord>
+				<badWord>jood</badWord>
+				<badWord>kutkamper</badWord>
+				<badWord>kankermoslim</badWord>
+				<badWord>kankerturk</badWord>
+				<badWord>kankerneger</badWord>
+				<badWord>kankernegerin</badWord>
+				<badWord>kankerkanker</badWord>
+				<badWord>kankerlijer</badWord>
+				<badWord>kankertering</badWord>
+				<badWord>kankerteringlijer</badWord>
+				<badWord>kankerroetmop</badWord>
+				<badWord>beabingo</badWord>
+				<badWord>jogobingo</badWord>
+				<badWord>nlbingo</badWord>
+				<badWord>mariabingo</badWord>
+				<badWord>bingoday</badWord>
+				<badWord>bingolot</badWord>
+				<badWord>unibet</badWord>
+				<badWord>kankerkutbingo</badWord>
+				<badWord>kankerkut</badWord>
+				<badWord>kankerkutje</badWord>
+				<badWord>kankerlul</badWord>
+				<badWord>kankerneuken</badWord>
+				<badWord>kankerpijpen</badWord>
+				<badWord>kankersperma</badWord>
+				<badWord>kankerhoer</badWord>
+				<badWord>kankerhoertje</badWord>
+				<badWord>kankerpik</badWord>
+				<badWord>kankerpikkie</badWord>
+				<badWord>kankerzeiken</badWord>
+				<badWord>kankerkutspel</badWord>
+				<badWord>kankerspel</badWord>
+				<badWord>kankerjood</badWord>
+				<badWord>kankerkutkamper</badWord>
+				<badWord>aalskakker</badWord>
+				<badWord>aambeienbeffer</badWord>
+				<badWord>aambeienlikker</badWord>
+				<badWord>aambeienschoffelaar</badWord>
+				<badWord>aambeihaarwasser</badWord>
+				<badWord>aapjesviller</badWord>
+				<badWord>aapmens</badWord>
+				<badWord>aaprikaan</badWord>
+				<badWord>aardappelhoer</badWord>
+				<badWord>aardappelluis</badWord>
+				<badWord>aardgeest</badWord>
+				<badWord>aardpeer</badWord>
+				<badWord>aardpiraat</badWord>
+				<badWord>aardvarken</badWord>
+				<badWord>aardworm</badWord>
+				<badWord>aardworst</badWord>
+				<badWord>anuslikkendekontkever</badWord>
+				<badWord>anuslikker</badWord>
+				<badWord>anusnicht</badWord>
+				<badWord>anusontkalker</badWord>
+				<badWord>anuspapegaai</badWord>
+				<badWord>anuspenetreerder</badWord>
+				<badWord>anuspieper</badWord>
+				<badWord>anuspiloot</badWord>
+				<badWord>anuspiraat</badWord>
+				<badWord>anuspuntverknetteraar</badWord>
+				<badWord>anusreflector</badWord>
+				<badWord>anusridder</badWord>
+				<badWord>anussabbelaar</badWord>
+				<badWord>baanduivel</badWord>
+				<badWord>baardaap</badWord>
+				<badWord>baarmoeder</badWord>
+				<badWord>baggerbult</badWord>
+				<badWord>baggeraap</badWord>
+				<badWord>baggeraar</badWord>
+				<badWord>baggerbeer</badWord>
+				<badWord>baggerboer</badWord>
+				<badWord>baggerhoer</badWord>
+				<badWord>baggerlip</badWord>
+				<badWord>baggerslet</badWord>
+				<badWord>bakhoer</badWord>
+				<badWord>balkan-hork</badWord>
+				<badWord>ballebaars</badWord>
+				<badWord>ballekratser</badWord>
+				<badWord>ballenbatser</badWord>
+				<badWord>ballenbeuker</badWord>
+				<badWord>ballenhoofd</badWord>
+				<badWord>bananendief</badWord>
+				<badWord>banaanspuitslet</badWord>
+				<badWord>banaanspruitslet</badWord>
+				<badWord>banaliteit</badWord>
+				<badWord>bananenbeffer</badWord>
+				<badWord>bananenfretter</badWord>
+				<badWord>bananenhoofd</badWord>
+				<badWord>beflijster</badWord>
+				<badWord>beflulhanger</badWord>
+				<badWord>befhenk</badWord>
+				<badWord>befhoer</badWord>
+				<badWord>befkever</badWord>
+				<badWord>befkikker</badWord>
+				<badWord>befkoning</badWord>
+				<badWord>boerenkut</badWord>
+				<badWord>boerenlul</badWord>
+				<badWord>bokkekut</badWord>
+				<badWord>bokkel</badWord>
+				<badWord>bokkenlul</badWord>
+				<badWord>bokkepenis</badWord>
+				<badWord>bokkepok</badWord>
+				<badWord>bokkerbeffer</badWord>
+				<badWord>bosbonker</badWord>
+				<badWord>bosjesneger</badWord>
+				<badWord>boskut</badWord>
+				<badWord>cabaretlul</badWord>
+				<badWord>camperhoer</badWord>
+				<badWord>campesneurdo</badWord>
+				<badWord>campinghoer</badWord>
+				<badWord>campingreed</badWord>
+				<badWord>campingslet</badWord>
+				<badWord>campusnerd</badWord>
+				<badWord>camslet</badWord>
+				<badWord>boskameel</badWord>
+				<badWord>boskoe</badWord>
+				<badWord>bosmongool</badWord>
+				<badWord>bosneger</badWord>
+				<badWord>chocohoer</badWord>
+				<badWord>cyberhoer</badWord>
+				<badWord>cyberslet</badWord>
+				<badWord>cybersnol</badWord>
+				<badWord>dikzak</badWord>
+				<badWord>dildo</badWord>
+				<badWord>dildodel</badWord>
+				<badWord>dropjojo</badWord>
+				<badWord>dropkut</badWord>
+				<badWord>droplul</badWord>
+				<badWord>dwaas</badWord>
+				<badWord>flapdrol</badWord>
+				<badWord>flapkut</badWord>
+				<badWord>dildotrekker</badWord>
+				<badWord>fucker</badWord>
+				<badWord>fuckface</badWord>
+				<badWord>fuckyou</badWord>
+				<badWord>geitebeffer</badWord>
+				<badWord>fuckingkutkop</badWord>
+				<badWord>fucionfucker</badWord>
+				<badWord>geitekut</badWord>
+				<badWord>geitelul</badWord>
+				<badWord>geitepijper</badWord>
+				<badWord>geitenbaffer</badWord>
+				<badWord>geitenbeffer</badWord>
+				<badWord>grafkut</badWord>
+				<badWord>graflul</badWord>
+				<badWord>grafmongool</badWord>
+				<badWord>gratekut</badWord>
+				<badWord>gratenkut</badWord>
+				<badWord>greppelbeffer</badWord>
+				<badWord>greppeldel</badWord>
+				<badWord>greppelheks</badWord>
+				<badWord>hoerebok</badWord>
+				<badWord>hoerejong</badWord>
+				<badWord>hoerenjong</badWord>
+				<badWord>hoerenkots</badWord>
+				<badWord>hoerenkut</badWord>
+				<badWord>hoerenloper</badWord>
+				<badWord>hoerenzoon</badWord>
+				<badWord>hoerenzwam</badWord>
+				<badWord>hoerepoeper</badWord>
+				<badWord>hoerezak</badWord>
+				<badWord>hoerperser</badWord>
+				<badWord>homo</badWord>
+				<badWord>homofiel</badWord>
+				<badWord>homofielebewaker</badWord>
+				<badWord>homofielebroodpoot</badWord>
+				<badWord>hoerslijper</badWord>
+				<badWord>holbewoner</badWord>
+				<badWord>holjokkergreppelhoer</badWord>
+				<badWord>greppelslet</badWord>
+				<badWord>huppelkut</badWord>
+				<badWord>huppelkutje</badWord>
+				<badWord>huppelkutter</badWord>
+				<badWord>hondekut</badWord>
+				<badWord>hondelul</badWord>
+				<badWord>hondenfacker</badWord>
+				<badWord>hondenkrikker</badWord>
+				<badWord>hondenneuker</badWord>
+				<badWord>idioot</badWord>
+				<badWord>imbiciel</badWord>
+				<badWord>pornokabouter</badWord>
+				<badWord>internetslet</badWord>
+				<badWord>janlul</badWord>
+				<badWord>jodenkoek</badWord>
+				<badWord>kaaskop</badWord>
+				<badWord>kamelenlul</badWord>
+				<badWord>kamelenpijper</badWord>
+				<badWord>kamelenridder</badWord>
+				<badWord>kamperhoer</badWord>
+				<badWord>kampschreur</badWord>
+				<badWord>kanaak</badWord>
+				<badWord>kanalenveger</badWord>
+				<badWord>kanarieneuker</badWord>
+				<badWord>kippenneuker</badWord>
+				<badWord>kontbonker</badWord>
+				<badWord>kontcoureur</badWord>
+				<badWord>kontcrossende</badWord>
+				<badWord>kontegezicht</badWord>
+				<badWord>konteketser</badWord>
+				<badWord>kontekleverkever</badWord>
+				<badWord>konteklimmer</badWord>
+				<badWord>kontekratser</badWord>
+				<badWord>kontekroeper</badWord>
+				<badWord>kontekuiser</badWord>
+				<badWord>kontenbonker</badWord>
+				<badWord>kontenketser</badWord>
+				<badWord>kontenkruiper</badWord>
+				<badWord>kontenkuiser</badWord>
+				<badWord>kontenlikker</badWord>
+				<badWord>kontenneuker</badWord>
+				<badWord>kontenpakker</badWord>
+				<badWord>kofferhoer</badWord>
+				<badWord>klootvis</badWord>
+				<badWord>kuthoer</badWord>
+				<badWord>kuthommel</badWord>
+				<badWord>kuthond</badWord>
+				<badWord>kuthoofd</badWord>
+				<badWord>kutkind</badWord>
+				<badWord>kutkip</badWord>
+				<badWord>kuttenlikker</badWord>
+				<badWord>kuttenneuker</badWord>
+				<badWord>kuttenstamper</badWord>
+				<badWord>kuttewapper</badWord>
+				<badWord>kuttezakker</badWord>
+				<badWord>kuttezuiger</badWord>
+				<badWord>kutveger</badWord>
+				<badWord>kutviool</badWord>
+				<badWord>kutvloeistof</badWord>
+				<badWord>lafbek</badWord>
+				<badWord>lijkenlikker</badWord>
+				<badWord>lijkenneuker</badWord>
+				<badWord>lijkenprikker</badWord>
+				<badWord>lijkenwipper</badWord>
+				<badWord>mafkaas</badWord>
+				<badWord>mafkees</badWord>
+				<badWord>mafketel</badWord>
+				<badWord>mafklapper</badWord>
+				<badWord>mafkikker</badWord>
+				<badWord>malloo</badWord>
+				<badWord>manwijf</badWord>
+				<badWord>mietje</badWord>
+				<badWord>mismaaksel</badWord>
+				<badWord>misneuker</badWord>
+				<badWord>moederneuker</badWord>
+				<badWord>motherfucker</badWord>
+				<badWord>mongool</badWord>
+				<badWord>paardekut</badWord>
+				<badWord>poephoer</badWord>
+				<badWord>poephoofd</badWord>
+				<badWord>poepkop</badWord>
+				<badWord>poepkut</badWord>
+				<badWord>poeta</badWord>
+				<badWord>quasimodo</badWord>
+				<badWord>ragnicht</badWord>
+				<badWord>railnicht</badWord>
+				<badWord>reetkikker</badWord>
+				<badWord>reetneus</badWord>
+				<badWord>reetracer</badWord>
+				<badWord>reetridder</badWord>
+				<badWord>reetroeier</badWord>
+				<badWord>reetveeg</badWord>
+				<badWord>reetveter</badWord>
+				<badWord>relnicht</badWord>
+				<badWord>ruilnicht</badWord>
+				<badWord>rukbeer</badWord>
+				<badWord>rukduck</badWord>
+				<badWord>rukeend</badWord>
+				<badWord>rukfreak</badWord>
+				<badWord>rukfriek</badWord>
+				<badWord>rukhoer</badWord>
+				<badWord>schapenneuker</badWord>
+				<badWord>schijthoer</badWord>
+				<badWord>schijthomo</badWord>
+				<badWord>schijtkameel</badWord>
+				<badWord>schijtwijf</badWord>
+				<badWord>schijtzak</badWord>
+				<badWord>schijtkut</badWord>
+				<badWord>schimmelkont</badWord>
+				<badWord>schimmelkut</badWord>
+				<badWord>schimmelpik</badWord>
+				<badWord>schimmelkont</badWord>
+				<badWord>schoolhoer</badWord>
+				<badWord>schoolhoertje</badWord>
+				<badWord>schoolkamphoer</badWord>
+				<badWord>schoonmaakturk</badWord>
+				<badWord>schoonmoederneuker</badWord>
+				<badWord>seksslet</badWord>
+				<badWord>sexterrorist</badWord>
+				<badWord>tierenlul</badWord>
+				<badWord>stinkaap</badWord>
+				<badWord>stinkbeer</badWord>
+				<badWord>stinkbek</badWord>
+				<badWord>stinkbom</badWord>
+				<badWord>stinkdeken</badWord>
+				<badWord>stinkhol</badWord>
+				<badWord>stinkhoer</badWord>
+				<badWord>stinkhomo</badWord>
+				<badWord>stinklul</badWord>
+				<badWord>stinkmalloot</badWord>
+				<badWord>stinkotter</badWord>
+				<badWord>stinkpoepgat</badWord>
+				<badWord>stinkslet</badWord>
+				<badWord>stinkspleet</badWord>
+				<badWord>stinkzak</badWord>
+				<badWord>stinkzwam</badWord>
+				<badWord>stoephaas</badWord>
+				<badWord>stoephoer</badWord>
+				<badWord>straatslet</badWord>
+				<badWord>straatsnolstrandhoer</badWord>
+				<badWord>strontzak</badWord>
+				<badWord>strontzakneuker</badWord>
+				<badWord>strontzuiger</badWord>
+				<badWord>sufkut</badWord>
+				<badWord>suflul</badWord>
+				<badWord>superkut</badWord>
+				<badWord>supermongool</badWord>
+				<badWord>takkehoer</badWord>
+				<badWord>takkenteef</badWord>
+				<badWord>teringhond</badWord>
+				<badWord>teringhufter</badWord>
+				<badWord>teringlijer</badWord>
+				<badWord>teringlul</badWord>
+				<badWord>terrorist</badWord>
+				<badWord>turbotrut</badWord>
+				<badWord>turfsteker</badWord>
+				<badWord>turkenbeffer</badWord>
+				<badWord>turkenlikker</badWord>
+				<badWord>turkenneuker</badWord>
+				<badWord>turkentrekker</badWord>
+				<badWord>zaadbal</badWord>
+				<badWord>zaadcontainer</badWord>
+				<badWord>zaadhamsteraar</badWord>
+				<badWord>zaadheks</badWord>
+				<badWord>zaadhoer</badWord>
+				<badWord>zaadnaad</badWord>
+				<badWord>zaadnek</badWord>
+				<badWord>zaadschieter</badWord>
+				<badWord>zaadslikker</badWord>
+				<badWord>zaadslet</badWord>
+				<badWord>zaadsnuiver</badWord>
+				<badWord>zaadspuitende</badWord>
+				<badWord>zaadstaafteler</badWord>
+				<badWord>zaadstengel</badWord>
+				<badWord>zaadzwerver</badWord>
+				<badWord>zaadvarken</badWord>
+				<badWord>zaadvrager</badWord>
+				<badWord>zaadvragende-budcontainer</badWord>
+				<badWord>zaadvreter</badWord>
+				<badWord>zigeuner</badWord>
+				<badWord>Zwartjoeke</badWord>
+				<badWord>Binladen</badWord>
+			</BadWordsList>
+		</BadWordsFilter>
+		
+		<BanCleaning>auto</BanCleaning>
+		<BanDuration>1800</BanDuration> <!-- 30 min -->
+		<BannedLoginMessage>You have been banned!</BannedLoginMessage>
+		
+		<!-- Number of worker threads in the server output stage -->
+		<OutQueueThreads>1</OutQueueThreads>
+		
+		<!-- Number of worker threads in the extension handler -->
+		<ExtHandlerThreads>1</ExtHandlerThreads>
+		
+		<!-- 
+			New since 1.6.0 
+			Set the client queue size and the max. allowed dropped packets
+		-->
+		<ClientMessagQueue>
+			<QueueSize>80</QueueSize>
+			<MaxAllowedDroppedPackets>10</MaxAllowedDroppedPackets>
+		</ClientMessagQueue>
+		
+		<!-- Max Size of the global message queue -->
+		<MaxIncomingQueue>5000</MaxIncomingQueue>
+		
+		<!-- Policy for ghost connections -->
+		<DeadChannelsPolicy>strict</DeadChannelsPolicy>
+		
+		<!-- Max. length of an incoming request -->
+		<MaxMsgLen>4096</MaxMsgLen>
+		
+		<!-- Max. size of a log file -->
+		<LogMaxSize>5000000</LogMaxSize>
+		
+		<!-- Max number of rotated log files -->
+		<LogMaxFiles>5</LogMaxFiles>
+		
+		<!--
+			Available options are:
+			
+			FINEST
+			FINER
+			FINE
+			CONFIG
+			INFO
+			WARNING
+			SEVERE
+
+		-->
+		<FileLoggingLevel>WARNING</FileLoggingLevel>
+		<ConsoleLoggingLevel>INFO</ConsoleLoggingLevel>	
+		
+		<!-- Adminisitrator login -->
+		<AdminLogin>sfs_gA03#ser</AdminLogin>
+		<AdminPassword>d$sf%ds</AdminPassword>
+		
+		<!-- Allowed administrator IP addresses -->
+		<AdminAllowedAddresses>
+			<AllowedAddress>*.*.*.*</AllowedAddress>
+		</AdminAllowedAddresses>
+		
+		<!-- Allow remote debugging of extensions -->
+		<ExtensionRemoteDebug>true</ExtensionRemoteDebug>
+		
+		<!-- 
+			Allow global autoreload of extensions upon file save 
+			You should specify in each Zone if the autoreload is enabled.
+		-->
+		<AutoReloadExtensions>true</AutoReloadExtensions>
+		
+		<!-- Allows remote extension debugging in the admin tool -->
+		<ExtensionRemoteDebug>true</ExtensionRemoteDebug>
+		
+		<!-- Specify the max number of clients connected under the same IP. 0 = unlimited -->
+		<IpFilter>0</IpFilter>
+		
+		<!-- SMTP settings for sending emails -->
+		<Mailer>
+			<MailHost>test.mail.com</MailHost>
+			<MailUser>foo</MailUser>
+			<MailPass>bar</MailPass>
+			<SmtpPort>25</SmtpPort>
+			<WorkerThreads>1</WorkerThreads>
+		</Mailer>
+		
+		<!-- Enable / Disable remote zone info -->
+		<EnableZoneInfo>false</EnableZoneInfo>
+		
+		<!-- Enable / Disable embedded webserver -->
+		<WebServer active="true">
+			<CfgFile>webserver/cfg/jetty.xml</CfgFile>
+		</WebServer>
+		
+		<!--  raw custom protocol separator --> 
+		<RawProtocolSeparator><![CDATA[%]]></RawProtocolSeparator>
+		
+	</ServerSetup>
+	
+	
+	
+	<!--
+		Zones Configuration.
+	-->
+	<Zones>	
+		
+		<Zone name="BingoV1_Germany" customLogin="true" roomListVars="true">
+			<MaxRoomNamesLen>50</MaxRoomNamesLen>
+                        <Extensions>
+				<extension name="accountExt" className="games.casino.bingov1.CashHandler" type="java" />	
+				<extension name="loginExt" className="games.casino.bingov1.LoginExtention" type="java" />
+				<extension name="zoneExt" className="games.casino.bingov1.ZoneLevelExtension" type="java" />
+				<extension name="LobbyExtension" className="games.casino.bingov1.LobbyExt" type="java" />
+			</Extensions>
+
+
+
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="1500" isPrivate="false" isTemp="false" autoJoin="true" >
+					<!--Extensions>
+						<extension name="gameExt"  className="games.casino.bingov1.gameExt"  type="java" />
+					</Extensions-->
+				</Room>
+			
+			</Rooms>
+		</Zone>
+		<Zone name="BingoV1_Duch" customLogin="true" roomListVars="true">
+			<MaxRoomNamesLen>50</MaxRoomNamesLen>
+                        <Extensions>
+				<extension name="accountExt" className="games.casino.bingov1.CashHandler" type="java" />
+				<extension name="loginExt" className="games.casino.bingov1.LoginExtention" type="java" />
+				<extension name="zoneExt" className="games.casino.bingov1.ZoneLevelExtension" type="java" />
+				<extension name="LobbyExtension" className="games.casino.bingov1.LobbyExt" type="java" />
+			</Extensions>
+
+
+
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="1500" isPrivate="false" isTemp="false" autoJoin="true" >
+					<!--Extensions>
+						<extension name="gameExt"  className="games.casino.bingov1.gameExt"  type="java" />
+					</Extensions-->
+				</Room>
+			
+			</Rooms>
+	
+		</Zone>
+		<Zone name="BingoV1_Spanish" customLogin="true" roomListVars="true">
+			<MaxRoomNamesLen>50</MaxRoomNamesLen>
+                        <Extensions>
+				<extension name="accountExt" className="games.casino.bingov1.CashHandler" type="java" />
+				<extension name="loginExt" className="games.casino.bingov1.LoginExtention" type="java" />
+				<extension name="zoneExt" className="games.casino.bingov1.ZoneLevelExtension" type="java" />
+				<extension name="LobbyExtension" className="games.casino.bingov1.LobbyExt" type="java" />
+			</Extensions>
+
+
+
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="1500" isPrivate="false" isTemp="false" autoJoin="true" >
+					<!--Extensions>
+						<extension name="gameExt"  className="games.casino.bingov1.gameExt"  type="java" />
+					</Extensions-->
+				</Room>
+			
+			</Rooms>
+		</Zone>
+		
+	
+		
+                <Zone name="BingoV2_Germany" customLogin="true" roomListVars="true">
+                        <Extensions>
+			      	<extension name="accountExt" className="games.casino.bingov2.gameImpl.CashHandler" type="java" />
+				<extension name="loginExt" className="games.casino.bingov2.gameImpl.LoginExtention" type="java" />
+		        	<extension name="LobbyExt" className="games.casino.bingov2.gameImpl.LobbyExt" type="java" />
+				<extension name="zoneExt" className="games.casino.bingov2.gameImpl.ZoneLevelExtension" type="java" />
+			</Extensions>
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="1500" isPrivate="false" isTemp="false" autoJoin="true" >
+				</Room>
+			
+			</Rooms>
+		</Zone>
+		<Zone name="BingoV2_Duch" customLogin="true" roomListVars="true">
+			<Extensions>
+				<extension name="accountExt" className="games.casino.bingov2.gameImpl.CashHandler" type="java" />
+				<extension name="loginExt" className="games.casino.bingov2.gameImpl.LoginExtention" type="java" />
+					<extension name="LobbyExt" className="games.casino.bingov2.gameImpl.LobbyExt" type="java" />
+				<extension name="zoneExt" className="games.casino.bingov2.gameImpl.ZoneLevelExtension" type="java" />
+			</Extensions>
+
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="1500" isPrivate="false" isTemp="false" autoJoin="true" >
+					<!--Extensions>
+						<extension name="gameExt"  className="games.casino.bingov2.gameImpl.LobbyExt"  type="java" />
+					</Extensions-->
+				</Room>
+			
+			</Rooms>
+	
+		</Zone>
+		<Zone name="BingoV2_Spanish" customLogin="true" roomListVars="true">
+			
+                        <Extensions>
+					<extension name="accountExt" className="games.casino.bingov2.gameImpl.CashHandler" type="java" />
+				<extension name="loginExt" className="games.casino.bingov2.gameImpl.LoginExtention" type="java" />
+					<extension name="LobbyExt" className="games.casino.bingov2.gameImpl.LobbyExt" type="java" />
+				<extension name="zoneExt" className="games.casino.bingov2.gameImpl.ZoneLevelExtension" type="java" />
+			</Extensions>
+
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="1500" isPrivate="false" isTemp="false" autoJoin="true" >
+					<!--Extensions>
+						<extension name="gameExt"  className="games.casino.bingov2.gameImpl.LobbyExt"  type="java" />
+					</Extensions-->
+				</Room>
+			
+			</Rooms>
+		</Zone>
+		           <Zone name="CasinowarZone" uCountUpdate="true" buddyList="20" maxUsers="4000" customLogin="true">
+		                   <Extensions>
+		                              <extension name="accountExt" className="games.casino.cashHandler.CashHandler" type="java" />
+		                              <extension name="LoginExtension" className="game.casino.casinowar.extensions.LoginExtension" type="java" />
+		               </Extensions>
+
+		                <Rooms>
+				<Room name="The Kitchen" maxUsers="70" isPrivate="false" isTemp="false" isGame="false">
+			                           <Extensions>
+				                          <extension name="SolitaireExtension" className="game.casino.casinowar.extensions.SolitaireExtension" type="java" />
+			                          </Extensions>
+				</Room>
+			</Rooms>
+
+                         </Zone>
+         <Zone name="SolitaireZone" uCountUpdate="true" buddyList="20" maxUsers="4000" customLogin="true">
+   <MaxRoomNamesLen>50</MaxRoomNamesLen>
+                         <Extensions>
+     <extension name="accountExt" className="games.casino.cashHandler.CashHandler" type="java" />
+           <extension name="LoginExtension" className="game.casino.solitaire.extensions.LoginExtension" type="java" />
+   </Extensions>
+   <Rooms>
+    <Room name="The Kitchen" maxUsers="1500" isPrivate="false" isTemp="false" isGame="false">
+     <Extensions>
+           <extension name="SolitaireExtension" className="game.casino.solitaire.extensions.SolitaireExtension" type="java" />
+     </Extensions>
+    </Room>
+   </Rooms>
+  </Zone>
+       <Zone name="BingoCam_Duch" customLogin="true" roomListVars="true">
+		  <MaxRoomNamesLen>50</MaxRoomNamesLen> 	
+
+                        <Extensions>
+				<extension name="accountExt" className="games.casino.bingoCam.CashHandler" type="java" />
+				<extension name="loginExt" className="games.casino.bingoCam.LoginExtention" type="java" />
+				<extension name="zoneExt" className="games.casino.bingoCam.ZoneLevelExtension" type="java" />
+				<extension name="LobbyExtension" className="games.casino.bingoCam.LobbyExt" type="java" />
+				<extension name="__$RedBox$__" className="com.smartfoxserver.redbox.RedBoxExtension" type="java" /> 
+
+			</Extensions>
+
+
+
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="50" isPrivate="false" isTemp="false" autoJoin="true" >
+					<!--Extensions>
+						<extension name="gameExt"  className="games.casino.bingoCam.gameExt"  type="java" />
+					</Extensions-->
+				</Room>
+			
+			</Rooms>
+	
+		</Zone>
+             <Zone name="Blackjack_Duch" customLogin="true" roomListVars="true">
+			
+                            <MaxRoomNamesLen>50</MaxRoomNamesLen>
+                        <Extensions>
+				<extension name="accountExt" className="games.casino.cashHandler.CashHandler" type="java" />
+				<extension name="loginExt" className="games.casino.Blackjack.LoginExtention" type="java" />
+				<extension name="zoneExt" className="games.casino.Blackjack.ZoneLevelExtension" type="java" />
+				<extension name="LobbyExtension" className="games.casino.Blackjack.LobbyExt" type="java" />
+			</Extensions>
+			<Rooms>
+			
+				<Room name="Lobby1" maxUsers="1500" isPrivate="false" isTemp="false" autoJoin="true" >
+					<!--Extensions>
+						<extension name="gameExt"  className="games.casino.Blackjack.gameExt"  type="java" />
+					</Extensions-->
+				</Room>
+			
+			</Rooms>
+	
+		</Zone>
+
+		
+	</Zones>
+
+
+</SmartFoxConfig>
